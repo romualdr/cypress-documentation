@@ -18,7 +18,6 @@ subject, use [`.its()`](/api/commands/its).
 .invoke(options, functionName)
 .invoke(functionName, args...)
 .invoke(options, functionName, args...)
-
 ```
 
 ### Usage
@@ -279,16 +278,14 @@ cy.wrap(english).invoke('greeting').should('equal', 'bye')
 
 ### Assertions [<Icon name="question-circle"/>](/guides/core-concepts/introduction-to-cypress#Assertions)
 
-- `.invoke()` will wait for the `function` to exist on the subject before
-  running. - `.invoke()` will wait for the promise to resolve if the invoked
-  `function` returns a promise. - `.invoke()` will automatically
-  [retry](/guides/core-concepts/retry-ability) until all chained assertions have
-  passed
+- `.invoke()` will wait for the `function` to exist on the subject before running.
+- `.invoke()` will wait for the promise to resolve if the invoked `function` returns a promise. 
+- `.invoke()` will automatically [retry](/guides/core-concepts/retry-ability) until all chained assertions have passed
 
 ### Timeouts [<Icon name="question-circle"/>](/guides/core-concepts/introduction-to-cypress#Timeouts)
 
-- `.invoke()` can time out waiting for assertions you've added to pass. -
-  `.invoke()` can time out waiting for a promise you've returned to resolve.
+- `.invoke()` can time out waiting for assertions you've added to pass. 
+- `.invoke()` can time out waiting for a promise you've returned to resolve.
 
 ## Command Log
 
