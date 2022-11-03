@@ -35,18 +35,18 @@ and **assertions**. For example, there are 6 commands and 2 assertions in the
 test below.
 
 ```javascript
-it("creates 2 items", () => {
-  cy.visit("/"); // command
+it('creates 2 items', () => {
+  cy.visit('/') // command
   cy.focused() // command
-    .should("have.class", "new-todo"); // assertion
+    .should('have.class', 'new-todo') // assertion
 
   cy.get('[data-testid="new-todo"]') // command
-    .type("todo A{enter}") // command
-    .type("todo B{enter}"); // command
+    .type('todo A{enter}') // command
+    .type('todo B{enter}') // command
 
   cy.get('[data-testid="todo-list"] li') // command
-    .should("have.length", 2); // assertion
-});
+    .should('have.length', 2) // assertion
+})
 ```
 
 The [Command Log](/guides/core-concepts/cypress-app#Command-Log) shows both
@@ -55,13 +55,13 @@ commands and assertions with passing assertions showing in green.
 <DocsImage
   src="/img/guides/retry-ability/v10/command-assertions.png"
   alt="Cypress tests shoing commands and assertions"
- />
+/>
 
 Let's look at the last command and assertion pair:
 
 ```javascript
 cy.get('[data-testid="todo-list"] li') // command
-  .should("have.length", 2); // assertion
+  .should('have.length', 2) // assertion
 ```
 
 Because nothing is synchronous in modern web applications, Cypress can't query
@@ -102,13 +102,13 @@ app.TodoModel.prototype.addTodo = function (title) {
     id: Utils.uuid(),
     title: title,
     completed: false,
-  });
+  })
 
   // let's trigger the UI to render after 3 seconds
   setTimeout(() => {
-    this.inform();
-  }, 3000);
-};
+    this.inform()
+  }, 3000)
+}
 ```
 
 My test still passes! The last `cy.get('[data-testid="todo-list"]')` and the
@@ -118,7 +118,7 @@ indicators, meaning Cypress is requerying for them.
 <DocsImage
   src="/img/guides/retry-ability/v10/retry-2-items.gif"
   alt="Retrying finding 2 items"
- />
+/>
 
 Within a few milliseconds after the DOM updates, `cy.get()` finds two elements
 and the `should('have.length', 2)` assertion passes
@@ -139,12 +139,12 @@ assertions inside of it.
 
 ```javascript
 cy.get('[data-testid="todo-list"] li') // command
-  .should("have.length", 2) // assertion
+  .should('have.length', 2) // assertion
   .and(($li) => {
     // 2 more assertions
-    expect($li.get(0).textContent, "first item").to.equal("todo a");
-    expect($li.get(1).textContent, "second item").to.equal("todo B");
-  });
+    expect($li.get(0).textContent, 'first item').to.equal('todo a')
+    expect($li.get(1).textContent, 'second item').to.equal('todo B')
+  })
 ```
 
 Because the second assertion
@@ -157,7 +157,7 @@ itself failed.
 <DocsImage
   src="/img/guides/retry-ability/v10/second-assertion-fails.gif"
   alt="Retrying multiple assertions"
- />
+/>
 
 ## Not every command is retried
 
@@ -169,8 +169,10 @@ documentation. For example, "Assertions section" of
 [`.first()`](/api/commands/first) tells us that the command is retried until all
 assertions that follow it are passing.
 
-- `.first()` will automatically [retry](/guides/core-concepts/retry-ability) until the element(s) [exist in the DOM](/guides/core-concepts/introduction-to-cypress#Default-Assertions)
-- `.first()` will automatically [retry](/guides/core-concepts/retry-ability) until all chained assertions have passed
+- `.first()` will automatically [retry](/guides/core-concepts/retry-ability)
+  until the element(s) [exist in the DOM](/guides/core-concepts/introduction-to-cypress#Default-Assertions)
+- `.first()` will automatically [retry](/guides/core-concepts/retry-ability)
+  until all chained assertions have passed
 
 ### Why are some commands _NOT_ retried?
 
@@ -200,14 +202,14 @@ index in the previously yielded list of elements.
 
 ```javascript
 cy.get('[data-testid="todo-list"] li') // command
-  .should("have.length", 2) // assertion
-  .eq(3); // command
+  .should('have.length', 2) // assertion
+  .eq(3) // command
 ```
 
 <DocsImage
   src="/img/guides/retry-ability/v10/eq.gif"
   alt="Retrying built-in assertion"
- />
+/>
 
 Some commands that cannot be retried still have built-in _waiting_. For example,
 as described in the "Assertions" section of [.click()](/api/commands/click), the
@@ -249,8 +251,8 @@ time. For example:
 ```javascript
 // we've modified the timeout which affects default + added assertions
 cy.get('[data-testid="mobile-nav"]', { timeout: 10000 })
-  .should("be.visible")
-  .and("contain", "Home");
+  .should('be.visible')
+  .and('contain', 'Home')
 ```
 
 Cypress will retry for up to 10 seconds to find a visible element of class
@@ -266,7 +268,7 @@ since it will spend 0 milliseconds retrying.
 ```javascript
 // check synchronously that the element does not exist (no retry)
 // for example just after a server-side render
-cy.get('[data-testid="ssr-error"]', { timeout: 0 }).should("not.exist");
+cy.get('[data-testid="ssr-error"]', { timeout: 0 }).should('not.exist')
 ```
 
 ## Only the last command is retried
@@ -298,7 +300,7 @@ The test passes in Cypress without a hitch.
 <DocsImage
   src="/img/guides/retry-ability/v10/adds-two-items-passes.gif"
   alt="Test passes"
- />
+/>
 
 But sometimes the test fails - not usually locally, no - it almost always fails
 on our continuous integration server. When the test fails, the recorded video
@@ -308,7 +310,7 @@ video:
 <DocsImage
   src="/img/guides/retry-ability/v10/adds-two-items-fails.gif"
   alt="Test fails"
- />
+/>
 
 The problem looks weird - I can clearly see the label "todo B" present in the
 list, so why isn't Cypress finding it? What is going on?
@@ -322,12 +324,12 @@ app.TodoModel.prototype.addTodo = function (title) {
     id: Utils.uuid(),
     title: title,
     completed: false,
-  });
+  })
 
   setTimeout(() => {
-    this.inform();
-  }, 100);
-};
+    this.inform()
+  }, 100)
+}
 ```
 
 This delay could be the source of our flaky tests when the application is
@@ -340,7 +342,7 @@ In the failing test, the first label was indeed found correctly:
 <DocsImage
   src="/img/guides/retry-ability/v10/first-item-label.png"
   alt="First item label"
- />
+/>
 
 Hover over the second "FIND label" command - something is wrong here. It found
 the _first label_, then kept requerying to find the text "todo B", but the first
@@ -349,7 +351,7 @@ item always remains "todo A".
 <DocsImage
   src="/img/guides/retry-ability/v10/second-item-label.png"
   alt="Second item label"
- />
+/>
 
 Hmm, weird, why is Cypress only looking at the _first_ item? Let's hover over
 the "GET .todo-list li" command to inspect what _that command found_. Ohh,
@@ -358,7 +360,7 @@ interesting - there was only one item at that moment.
 <DocsImage
   src="/img/guides/retry-ability/v10/second-get-li.png"
   alt="Second get li"
- />
+/>
 
 During the test, the `cy.get('[data-testid="todo-list"] li')` command quickly
 found the rendered `<li>` item - and that item was the first and only "todo A"
@@ -371,10 +373,7 @@ B" to the list. By the time the second item was added, Cypress had already
 To confirm this, let's remove the artificial delay to see what's happening in
 the passing test.
 
-<DocsImage
-  src="/img/guides/retry-ability/v10/two-items.png"
-  alt="Two items"
- />
+<DocsImage src="/img/guides/retry-ability/v10/two-items.png" alt="Two items" />
 
 When the web application runs without the delay, it gets its items into the DOM
 before the Cypress command `cy.get('[data-testid="todo-list"] li')` runs. After
@@ -389,10 +388,10 @@ For a variety of implementation reasons, Cypress commands **only** retry the
 **last command** before the assertion. In our test:
 
 ```javascript
-cy.get('[data-testid="new-todo"]').type("todo B{enter}");
+cy.get('[data-testid="new-todo"]').type('todo B{enter}')
 cy.get('[data-testid="todo-list"] li') // queries immediately, finds 1 <li>
-  .find("label") // retried, retried, retried with 1 <li>
-  .should("contain", "todo B"); // never succeeds with only 1st <li>
+  .find('label') // retried, retried, retried with 1 <li>
+  .should('contain', 'todo B') // never succeeds with only 1st <li>
 ```
 
 ## Use retry-ability correctly
@@ -432,7 +431,7 @@ list elements when the second "todo B" is added to the DOM.
 <DocsImage
   src="/img/guides/retry-ability/v10/combined-selectors.gif"
   alt="Combined selector"
- />
+/>
 
 :::info
 
@@ -444,12 +443,12 @@ list elements when the second "todo B" is added to the DOM.
 command.
 
 ```javascript
-cy.get('[data-testid="new-todo"]').type("todo A{enter}");
-cy.contains('[data-testid="todo-list"] li', "todo A");
-cy.get('[data-testid="new-todo"]').type("todo B{enter}");
+cy.get('[data-testid="new-todo"]').type('todo A{enter}')
+cy.contains('[data-testid="todo-list"] li', 'todo A')
+cy.get('[data-testid="new-todo"]').type('todo B{enter}')
 // you can use a regular expression
 // to match the text exactly
-cy.contains('[data-testid="todo-list"] li', /^todo B$/);
+cy.contains('[data-testid="todo-list"] li', /^todo B$/)
 ```
 
 :::
@@ -463,15 +462,15 @@ separator:
 // 🛑 not recommended
 // only the last "its" will be retried
 cy.window()
-  .its("app") // runs once
-  .its("model") // runs once
-  .its("todos") // retried
-  .should("have.length", 2);
+  .its('app') // runs once
+  .its('model') // runs once
+  .its('todos') // retried
+  .should('have.length', 2)
 
 // ✅ recommended
 cy.window()
-  .its("app.model.todos") // retried
-  .should("have.length", 2);
+  .its('app.model.todos') // retried
+  .should('have.length', 2)
 ```
 
 See the
@@ -509,7 +508,7 @@ it('adds two items', () => {
 <DocsImage
   src="/img/guides/retry-ability/v10/alternating-commands-assertions.png"
   alt="Passing test"
- />
+/>
 
 The test passes, because the second `cy.get('[data-testid="todo-list"] li')` is
 retried with its own assertion now `.should('have.length', 2)`. Only after
@@ -531,17 +530,17 @@ Below is an example where the number value is set after a delay:
   Random number: <span id="random-number">🎁</span>
 </div>
 <script>
-  const el = document.getElementById("random-number");
+  const el = document.getElementById('random-number')
   setTimeout(() => {
-    el.innerText = Math.floor(Math.random() * 10 + 1);
-  }, 1500);
+    el.innerText = Math.floor(Math.random() * 10 + 1)
+  }, 1500)
 </script>
 ```
 
 <DocsImage
   src="/img/guides/retry-ability/v10/random-number.gif"
   alt="Random number"
- />
+/>
 
 #### <Icon name="exclamation-triangle" color="red" /> Incorrectly waiting for values
 
@@ -552,10 +551,10 @@ following values, noted in the comments, before failing.
 ```javascript
 // WRONG: this test will not work as intended
 cy.get('[data-testid="random-number"]') // <div>🎁</div>
-  .invoke("text") // "🎁"
+  .invoke('text') // "🎁"
   .then(parseFloat) // NaN
-  .should("be.gte", 1) // fails
-  .and("be.lte", 10); // never evaluates
+  .should('be.gte', 1) // fails
+  .and('be.lte', 10) // never evaluates
 ```
 
 Unfortunately, the [.then()](/api/commands/then) command is not retried. Thus
@@ -564,7 +563,7 @@ the test only runs the entire chain once before failing.
 <DocsImage
   src="/img/guides/retry-ability/v10/random-number-first-attempt.png"
   alt="First attempt at writing the test"
- />
+/>
 
 #### <Icon name="check-circle" color="green" /> Correctly waiting for values
 
@@ -576,10 +575,10 @@ this using the `.should(callbackFn)`.
 cy.get('[data-testid="random-number"]').should(($div) => {
   // all the code inside here will retry
   // until it passes or times out
-  const n = parseFloat($div.text());
+  const n = parseFloat($div.text())
 
-  expect(n).to.be.gte(1).and.be.lte(10);
-});
+  expect(n).to.be.gte(1).and.be.lte(10)
+})
 ```
 
 The above test retries getting the element and invoking the text of the element
@@ -589,7 +588,7 @@ to get the number. When the number is finally set in the application, then the
 <DocsImage
   src="/img/guides/retry-ability/v10/random-number-callback.gif"
   alt="Random number using callback"
- />
+/>
 
 ### Use aliases
 
@@ -609,20 +608,20 @@ const Clicker = ({ click }) => (
   <div>
     <button onClick={click}>Click me</button>
   </div>
-);
+)
 
-it("calls the click prop twice", () => {
-  const onClick = cy.stub();
-  cy.mount(<Clicker click={onClick} />);
-  cy.get("button")
+it('calls the click prop twice', () => {
+  const onClick = cy.stub()
+  cy.mount(<Clicker click={onClick} />)
+  cy.get('button')
     .click()
     .click()
     .then(() => {
       // works in this case, but not recommended
       // because .then() does not retry
-      expect(onClick).to.be.calledTwice;
-    });
-});
+      expect(onClick).to.be.calledTwice
+    })
+})
 ```
 
 The above example will fail if the component calls the `click` prop after a
@@ -633,13 +632,13 @@ const Clicker = ({ click }) => (
   <div>
     <button onClick={() => setTimeout(click, 500)}>Click me</button>
   </div>
-);
+)
 ```
 
 <DocsImage
   src="/img/guides/retry-ability/v10/delay-click.png"
   alt="Expect fails the test without waiting for the delayed stub"
- />
+/>
 
 The test finishes before the component calls the `click` prop twice, and without
 retrying the assertion `expect(onClick).to.be.calledTwice`.
@@ -650,21 +649,21 @@ We recommend aliasing the stub using the [`.as`](/api/commands/as) command and
 using `cy.get('@alias').should(...)` assertions.
 
 ```js
-it("calls the click prop", () => {
-  const onClick = cy.stub().as("clicker");
-  cy.mount(<Clicker click={onClick} />);
-  cy.get("button").click().click();
+it('calls the click prop', () => {
+  const onClick = cy.stub().as('clicker')
+  cy.mount(<Clicker click={onClick} />)
+  cy.get('button').click().click()
 
   // good practice 💡
   // auto-retry the stub until it was called twice
-  cy.get("@clicker").should("have.been.calledTwice");
-});
+  cy.get('@clicker').should('have.been.calledTwice')
+})
 ```
 
 <DocsImage
   src="/img/guides/retry-ability/v10/click-twice.gif"
   alt="Retrying the assertions using a stub alias"
- />
+/>
 
 Watch the short video below to see this example in action
 

@@ -2,8 +2,8 @@ import type { Code, Content } from 'mdast'
 import type { Node } from 'unist'
 import visit from 'unist-util-visit'
 import { createDirective } from '../utils/createDirective'
-import { isCode, isMatchedDirective } from '../utils/matchHelpers';
-import { hydrateConfigSample } from './hydrateConfigSample';
+import { isCode, isMatchedDirective } from '../utils/matchHelpers'
+import { hydrateConfigSample } from './hydrateConfigSample'
 
 export function cypressConfigExample(this: any) {
   const tagName = 'cypress-config-example'

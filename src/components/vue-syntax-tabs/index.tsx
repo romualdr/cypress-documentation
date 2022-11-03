@@ -3,10 +3,10 @@ import Tabs from '@theme/Tabs'
 import TabItem from '@theme/TabItem'
 
 interface VueSyntaxTabsProps {
-  children: React.ReactNode;
+  children: React.ReactNode
 }
 
-const VueSyntaxTabs: React.FC<VueSyntaxTabsProps> = ({children}) => {
+const VueSyntaxTabs: React.FC<VueSyntaxTabsProps> = ({ children }) => {
   return (
     <Tabs groupId="vue-syntax-tabs">
       <TabItem value="vuejsx" label="JSX Syntax">

@@ -1,6 +1,6 @@
-import React from "react";
-import s from "./style.module.css";
-import { VideoProps } from "./types";
+import React from 'react'
+import s from './style.module.css'
+import { VideoProps } from './types'
 
 export default function LocalVideo({ src }: VideoProps) {
   return (
@@ -9,5 +9,5 @@ export default function LocalVideo({ src }: VideoProps) {
         <source src={src} />
       </video>
     </div>
-  );
+  )
 }

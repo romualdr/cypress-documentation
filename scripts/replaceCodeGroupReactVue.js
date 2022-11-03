@@ -1,8 +1,8 @@
 // https://www.npmjs.com/package/replace-in-file
-const replace = require("replace-in-file");
+const replace = require('replace-in-file')
 
 const options = {
-  files: "./docs/**/*.mdx",
+  files: './docs/**/*.mdx',
   // files: "./docs/core-concepts/cypress-app.mdx",
   from: [
     /<code-group-react-vue>/g,
@@ -14,19 +14,19 @@ const options = {
     /<\/template>/g,
   ],
   to: [
-    "<Tabs>",
-    "</Tabs>",
+    '<Tabs>',
+    '</Tabs>',
     "<TabItem value='React'>",
     "<TabItem value='React'>",
     "<TabItem value='Vue'>",
     "<TabItem value='Vue'>",
-    "</TabItem>",
+    '</TabItem>',
   ],
-};
+}
 
 try {
-  const results = replace.sync(options);
-  console.log("Replacement results:", results);
+  const results = replace.sync(options)
+  console.log('Replacement results:', results)
 } catch (error) {
-  console.error("Error occurred:", error);
+  console.error('Error occurred:', error)
 }

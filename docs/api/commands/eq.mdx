@@ -130,22 +130,21 @@ cy.get('li').eq(-2).should('contain', 'sphynx') // true
 
 ### Requirements [<Icon name="question-circle"/>](/guides/core-concepts/introduction-to-cypress#Chains-of-Commands)
 
-- `.eq()` requires being chained off a command that yields DOM
-element(s).
+- `.eq()` requires being chained off a command that yields DOM element(s).
 
 ### Assertions [<Icon name="question-circle"/>](/guides/core-concepts/introduction-to-cypress#Assertions)
 
-- `.eq()` will automatically
-[retry](/guides/core-concepts/retry-ability) until the element(s)
-[exist in the DOM](/guides/core-concepts/introduction-to-cypress#Default-Assertions)</li><li>`.eq()`
-will automatically [retry](/guides/core-concepts/retry-ability) until all
-chained assertions have passed
+- `.eq()` will automatically [retry](/guides/core-concepts/retry-ability) until
+  the element(s)
+  [exist in the DOM](/guides/core-concepts/introduction-to-cypress#Default-Assertions) -
+  `.eq()` will automatically [retry](/guides/core-concepts/retry-ability) until
+  all chained assertions have passed
 
 ### Timeouts [<Icon name="question-circle"/>](/guides/core-concepts/introduction-to-cypress#Timeouts)
 
 - `.eq()` can time out waiting for the element(s) to
-[exist in the DOM](/guides/core-concepts/introduction-to-cypress#Default-Assertions).</li><li>`.eq()`
-can time out waiting for assertions you've added to pass.
+  [exist in the DOM](/guides/core-concepts/introduction-to-cypress#Default-Assertions). -
+  `.eq()` can time out waiting for assertions you've added to pass.
 
 ## Command Log
 
@@ -162,7 +161,10 @@ The commands above will display in the Command Log as:
 When clicking on the `eq` command within the command log, the console outputs
 the following:
 
-<DocsImage src="/img/api/eq/see-element-and-list-when-using-eq.png" alt="console.log eq" />
+<DocsImage
+  src="/img/api/eq/see-element-and-list-when-using-eq.png"
+  alt="console.log eq"
+/>
 
 ## See also
 

@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react'
 // import s from "./style.module.css";
-import { PluginProps } from "./types";
+import { PluginProps } from './types'
 // @ts-ignore
-import projectsJSON from "@site/src/data/projects.json";
+import projectsJSON from '@site/src/data/projects.json'
 
 export default function PluginsList() {
   return (
@@ -22,5 +22,5 @@ export default function PluginsList() {
         </ul>
       </article>
     </>
-  );
+  )
 }

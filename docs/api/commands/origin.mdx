@@ -13,8 +13,10 @@ limitation determined by standard web security features of the browser. The
 
 :::caution
 
-<strong><Icon name="exclamation-triangle" />
-Experimental</strong>
+<strong>
+  <Icon name="exclamation-triangle" />
+  Experimental
+</strong>
 
 The `session` API is currently experimental, and can be enabled by setting the
 [`experimentalSessionAndOrigin`](/guides/references/experiments) option to
@@ -43,8 +45,10 @@ of each test.
 
 :::caution
 
-<strong class="alert-header"><Icon name="exclamation-triangle"></Icon>
-Obstructive Third Party Code</strong>
+<strong class="alert-header">
+  <Icon name="exclamation-triangle"></Icon>
+  Obstructive Third Party Code
+</strong>
 
 By default Cypress will search through the response streams coming from your
 server on first party `.html` and `.js` files and replace code that matches
@@ -389,20 +393,19 @@ and reuse it across tests.
 
 Enabling the `experimentalSessionAndOrigin` flag makes the test-runner work
 slightly differently, and some test suites that rely on the existing behaviour
-may have to be updated. The most important of these changes is
-**test isolation** which defaults to `on`. This means that after every test,
-the current page is reset to `about:blank` and cookies, local storage and
-session storage in all domains are cleared before each test. This change is
-opt-in for now, but will be standardized in a future major release of Cypress,
-so eventually all tests will need to be isolated.
+may have to be updated. The most important of these changes is **test
+isolation** which defaults to `on`. This means that after every test, the
+current page is reset to `about:blank` and cookies, local storage and session
+storage in all domains are cleared before each test. This change is opt-in for
+now, but will be standardized in a future major release of Cypress, so
+eventually all tests will need to be isolated.
 
 Before this change, it was possible to write tests such that you could, for
 example, log in to a CMS in the first test, change some content in the second
 test, verify the new version is displayed on a different URL in the third, and
 log out in the fourth. Here's a simplified example of such a test strategy.
 
-<Badge type="danger">Before</Badge> Multiple small tests against different
-origins
+<Badge type="danger">Before</Badge> Multiple small tests against different origins
 
 ```js
 it('logs in', () => {

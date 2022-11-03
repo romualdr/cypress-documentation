@@ -1,12 +1,14 @@
-import React from 'react';
+import React from 'react'
 import Tabs from '@theme/Tabs'
 import TabItem from '@theme/TabItem'
 
 interface CypressConfigFileTabsProps {
-  children: React.ReactNode;
+  children: React.ReactNode
 }
 
-const CypressConfigFileTabs: React.FC<CypressConfigFileTabsProps> = ({ children }) => {
+const CypressConfigFileTabs: React.FC<CypressConfigFileTabsProps> = ({
+  children,
+}) => {
   return (
     <Tabs groupId="config-file-tabs">
       <TabItem value="js" label="cypress.config.js">
@@ -17,6 +19,6 @@ const CypressConfigFileTabs: React.FC<CypressConfigFileTabsProps> = ({ children 
       </TabItem>
     </Tabs>
   )
-};
+}
 
-export default CypressConfigFileTabs;
+export default CypressConfigFileTabs

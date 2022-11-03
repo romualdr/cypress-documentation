@@ -96,22 +96,21 @@ cy.get('li.active').parents('.main-nav')
 
 ### Requirements [<Icon name="question-circle"/>](/guides/core-concepts/introduction-to-cypress#Chains-of-Commands)
 
-- `.parents()` requires being chained off a command that yields DOM
-element(s).
+- `.parents()` requires being chained off a command that yields DOM element(s).
 
 ### Assertions [<Icon name="question-circle"/>](/guides/core-concepts/introduction-to-cypress#Assertions)
 
-- `.parents()` will automatically
-[retry](/guides/core-concepts/retry-ability) until the element(s)
-[exist in the DOM](/guides/core-concepts/introduction-to-cypress#Default-Assertions)</li><li>`.parents()`
-will automatically [retry](/guides/core-concepts/retry-ability) until all
-chained assertions have passed
+- `.parents()` will automatically [retry](/guides/core-concepts/retry-ability)
+  until the element(s)
+  [exist in the DOM](/guides/core-concepts/introduction-to-cypress#Default-Assertions) -
+  `.parents()` will automatically [retry](/guides/core-concepts/retry-ability)
+  until all chained assertions have passed
 
 ### Timeouts [<Icon name="question-circle"/>](/guides/core-concepts/introduction-to-cypress#Timeouts)
 
 - `.parents()` can time out waiting for the element(s) to
-[exist in the DOM](/guides/core-concepts/introduction-to-cypress#Default-Assertions).</li><li>`.parents()`
-can time out waiting for assertions you've added to pass.
+  [exist in the DOM](/guides/core-concepts/introduction-to-cypress#Default-Assertions). -
+  `.parents()` can time out waiting for assertions you've added to pass.
 
 ## Command Log
 
@@ -121,12 +120,18 @@ can time out waiting for assertions you've added to pass.
 cy.get('li.active').parents()
 ```
 
-<DocsImage src="/img/api/parents/get-all-parents-of-a-dom-element.png" alt="Command Log parents" />
+<DocsImage
+  src="/img/api/parents/get-all-parents-of-a-dom-element.png"
+  alt="Command Log parents"
+/>
 
 When clicking on the `parents` command within the command log, the console
 outputs the following:
 
-<DocsImage src="/img/api/parents/parents-elements-displayed-in-devtools-console.png" alt="Console Log parents" />
+<DocsImage
+  src="/img/api/parents/parents-elements-displayed-in-devtools-console.png"
+  alt="Console Log parents"
+/>
 
 ## See also
 

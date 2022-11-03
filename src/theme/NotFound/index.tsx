@@ -1,8 +1,8 @@
-import React from 'react';
-import Translate, {translate} from '@docusaurus/Translate';
-import {PageMetadata} from '@docusaurus/theme-common';
-import Layout from '@theme/Layout';
-import s from "./style.module.css";
+import React from 'react'
+import Translate, { translate } from '@docusaurus/Translate'
+import { PageMetadata } from '@docusaurus/theme-common'
+import Layout from '@theme/Layout'
+import s from './style.module.css'
 
 export default function NotFound() {
   return (
@@ -20,37 +20,49 @@ export default function NotFound() {
               <h1 className="hero__title">
                 <Translate
                   id="theme.NotFound.title"
-                  description="The title of the 404 page">
+                  description="The title of the 404 page"
+                >
                   404 Page Not Found
                 </Translate>
               </h1>
               <p className={s.content}>
                 <Translate
                   id="theme.NotFound.p1"
-                  description="The first paragraph of the 404 page">
-                  Well darn... we can't find the page you're looking for. One of these links might help.
+                  description="The first paragraph of the 404 page"
+                >
+                  Well darn... we can't find the page you're looking for. One of
+                  these links might help.
                 </Translate>
               </p>
               <div className={s.listWrapper}>
                 <ul>
-                    <li>
-                      <a href="/guides/core-concepts/introduction-to-cypress">Introduction to Cypress</a>
-                    </li>
-                    <li>
-                      <a href="/guides/core-concepts/introduction-to-cypress">The API Docs</a>
-                    </li>
-                    <li>
-                      <a href="/guides/core-concepts/introduction-to-cypress">Tutorials</a>
-                    </li>
-                    <li>
-                      <a href="/guides/core-concepts/introduction-to-cypress">The Cypress Dashboard</a>
-                    </li>
-                  </ul>
+                  <li>
+                    <a href="/guides/core-concepts/introduction-to-cypress">
+                      Introduction to Cypress
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/guides/core-concepts/introduction-to-cypress">
+                      The API Docs
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/guides/core-concepts/introduction-to-cypress">
+                      Tutorials
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/guides/core-concepts/introduction-to-cypress">
+                      The Cypress Dashboard
+                    </a>
+                  </li>
+                </ul>
               </div>
               <p className={s.ital}>
                 <Translate
                   id="theme.NotFound.p2"
-                  description="The 2nd paragraph of the 404 page">
+                  description="The 2nd paragraph of the 404 page"
+                >
                   Try using our sweet custom search in the header above. 🔍
                 </Translate>
               </p>
@@ -59,5 +71,5 @@ export default function NotFound() {
         </main>
       </Layout>
     </>
-  );
+  )
 }

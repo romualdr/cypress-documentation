@@ -4,13 +4,13 @@ title: Cypress.Cookies
 
 :::caution
 
-**<Icon name="exclamation-triangle" /> `Cypress.Cookies.preserveOnce()` and `Cypress.Cookies.defaults()` are deprecated in Cypress 9.7.0.**
+**<Icon name="exclamation-triangle" /> `Cypress.Cookies.preserveOnce()` and
+`Cypress.Cookies.defaults()` are deprecated in Cypress 9.7.0.**
 
-In a future release, support for
-`Cypress.Cookies.preserveOnce()` and `Cypress.Cookies.defaults()` will be
-removed. Consider using the experimental [`cy.session()`](/api/commands/session)
-command instead to cache and restore cookies and other sessions details between
-tests.
+In a future release, support for `Cypress.Cookies.preserveOnce()` and
+`Cypress.Cookies.defaults()` will be removed. Consider using the experimental
+[`cy.session()`](/api/commands/session) command instead to cache and restore
+cookies and other sessions details between tests.
 
 :::
 
@@ -68,7 +68,10 @@ cy.clearCookie('foo')
 cy.setCookie('foo', 'bar')
 ```
 
-<DocsImage src="/img/api/cookies/cookies-in-console-log.png" alt="Console log when debugging cookies" />
+<DocsImage
+  src="/img/api/cookies/cookies-in-console-log.png"
+  alt="Console log when debugging cookies"
+/>
 
 #### Turn off verbose debugging output
 
@@ -82,7 +85,10 @@ Cypress.Cookies.debug(true, { verbose: false })
 
 Now when Cypress logs cookies they will only include the `name` and `value`.
 
-<DocsImage src="/img/api/cookies/debugger-console-log-of-cookies.png" alt="Console log cookies with debug" />
+<DocsImage
+  src="/img/api/cookies/debugger-console-log-of-cookies.png"
+  alt="Console log cookies with debug"
+/>
 
 Debugging will be turned on until you explicitly turn it off.
 

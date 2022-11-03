@@ -44,8 +44,8 @@ Pass in an options object to change the default behavior of `cy.clearCookie()`.
 
 ### Yields [<Icon name="question-circle"/>](/guides/core-concepts/introduction-to-cypress#Subject-Management)
 
-- `cy.clearCookie()` yields `null`.</li><li>`cy.clearCookie()` cannot be
-chained further.
+- `cy.clearCookie()` yields `null`. - `cy.clearCookie()` cannot be chained
+  further.
 
 ## Examples
 
@@ -101,12 +101,18 @@ cy.getCookie('foo').should('be.null')
 
 The commands above will display in the Command Log as:
 
-<DocsImage src="/img/api/clearcookie/clear-cookie-in-browser-tests.png" alt="Command Log for clearcookie" />
+<DocsImage
+  src="/img/api/clearcookie/clear-cookie-in-browser-tests.png"
+  alt="Command Log for clearcookie"
+/>
 
 When clicking on `clearCookie` within the command log, the console outputs the
 following:
 
-<DocsImage src="/img/api/clearcookie/cleared-cookie-shown-in-console.png" alt="console.log for clearcookie" />
+<DocsImage
+  src="/img/api/clearcookie/cleared-cookie-shown-in-console.png"
+  alt="console.log for clearcookie"
+/>
 
 ## See also
 

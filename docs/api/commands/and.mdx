@@ -68,8 +68,8 @@ Whatever was passed to the function is what is yielded.
 
 ### Yields [<Icon name="question-circle"/>](/guides/core-concepts/introduction-to-cypress#Subject-Management)
 
-- In most cases, `.and()` yields the same subject it was given from the
-previous command.
+- In most cases, `.and()` yields the same subject it was given from the previous
+  command.
 
 ```javascript
 cy.get('nav') // yields <nav>
@@ -237,8 +237,8 @@ cy.get('button')
 
 ### Timeouts [<Icon name="question-circle"/>](/guides/core-concepts/introduction-to-cypress#Timeouts)
 
-- `.and()` will continue to [retry](/guides/core-concepts/retry-ability)
-its specified assertions until it times out.
+- `.and()` will continue to [retry](/guides/core-concepts/retry-ability) its
+  specified assertions until it times out.
 
 ```javascript
 cy.get('input', {timeout: 10000}).should('have.value', '10').and('have.class', 'error')
@@ -271,12 +271,18 @@ cy.get('.list')
 
 The commands above will display in the Command Log as:
 
-<DocsImage src="/img/api/and/cypress-and-command-log.png" alt="Command log for assertions" />
+<DocsImage
+  src="/img/api/and/cypress-and-command-log.png"
+  alt="Command log for assertions"
+/>
 
 When clicking on `assert` within the command log, the console outputs the
 following:
 
-<DocsImage src="/img/api/and/cypress-assertions-console-log.png" alt="console.log for assertions" />
+<DocsImage
+  src="/img/api/and/cypress-assertions-console-log.png"
+  alt="console.log for assertions"
+/>
 
 ## See also
 

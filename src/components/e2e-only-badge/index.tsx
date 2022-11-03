@@ -1,5 +1,5 @@
-import React from "react";
-import Badge from "@site/src/components/badge";
+import React from 'react'
+import Badge from '@site/src/components/badge'
 
 export default function E2EOnlyBadge() {
   return (
@@ -9,5 +9,5 @@ export default function E2EOnlyBadge() {
     >
       End-to-End Only
     </Badge>
-  );
+  )
 }

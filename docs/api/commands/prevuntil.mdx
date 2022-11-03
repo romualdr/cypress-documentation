@@ -98,21 +98,21 @@ cy.get('#nuts').prevUntil('#veggies')
 ### Requirements [<Icon name="question-circle"/>](/guides/core-concepts/introduction-to-cypress#Chains-of-Commands)
 
 - `.prevUntil()` requires being chained off a command that yields DOM
-element(s).
+  element(s).
 
 ### Assertions [<Icon name="question-circle"/>](/guides/core-concepts/introduction-to-cypress#Assertions)
 
-- `.prevUntil()` will automatically
-[retry](/guides/core-concepts/retry-ability) until the element(s)
-[exist in the DOM](/guides/core-concepts/introduction-to-cypress#Default-Assertions)</li><li>`.prevUntil()`
-will automatically [retry](/guides/core-concepts/retry-ability) until all
-chained assertions have passed
+- `.prevUntil()` will automatically [retry](/guides/core-concepts/retry-ability)
+  until the element(s)
+  [exist in the DOM](/guides/core-concepts/introduction-to-cypress#Default-Assertions) -
+  `.prevUntil()` will automatically [retry](/guides/core-concepts/retry-ability)
+  until all chained assertions have passed
 
 ### Timeouts [<Icon name="question-circle"/>](/guides/core-concepts/introduction-to-cypress#Timeouts)
 
 - `.prevUntil()` can time out waiting for the element(s) to
-[exist in the DOM](/guides/core-concepts/introduction-to-cypress#Default-Assertions).</li><li>`.prevUntil()`
-can time out waiting for assertions you've added to pass.
+  [exist in the DOM](/guides/core-concepts/introduction-to-cypress#Default-Assertions). -
+  `.prevUntil()` can time out waiting for assertions you've added to pass.
 
 ## Command Log
 
@@ -124,12 +124,18 @@ cy.get('#nuts').prevUntil('#veggies')
 
 The commands above will display in the Command Log as:
 
-<DocsImage src="/img/api/prevuntil/prev-until-finding-elements-in-command-log.png" alt="Command Log prevUntil" />
+<DocsImage
+  src="/img/api/prevuntil/prev-until-finding-elements-in-command-log.png"
+  alt="Command Log prevUntil"
+/>
 
 When clicking on `prevUntil` within the command log, the console outputs the
 following:
 
-<DocsImage src="/img/api/prevuntil/console-log-previous-elements-until-defined-el.png" alt="Console Log prevUntil" />
+<DocsImage
+  src="/img/api/prevuntil/console-log-previous-elements-until-defined-el.png"
+  alt="Console Log prevUntil"
+/>
 
 ## See also
 

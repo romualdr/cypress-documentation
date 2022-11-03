@@ -1,4 +1,4 @@
 export interface PluginProps {
-  children: any;
-  type: string;
+  children: any
+  type: string
 }

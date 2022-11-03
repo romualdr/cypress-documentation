@@ -3,7 +3,7 @@ section {
 }
 
 h3 {
-  margin-bottom: .75rem;
+  margin-bottom: 0.75rem;
 }
 
 .plugins .wrapper {
@@ -79,7 +79,7 @@ ul.pluginsList li p {
 /* remove hash symbol from appearing in the ::before
    of the anchors in titles */
 .pluginTitle > h3 > a::before {
-  content: "";
+  content: '';
   margin-left: 0;
   padding-right: 0;
 }

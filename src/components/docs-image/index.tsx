@@ -14,11 +14,7 @@ export default function DocsImage({
 }: DocsImageProps) {
   return (
     <div className={s.docsImage}>
-      <img
-        src={src}
-        alt={alt || title || caption}
-        title={title}
-      />
+      <img src={src} alt={alt || title || caption} title={title} />
       {caption && <p className={s.caption}>{caption}</p>}
     </div>
   )

@@ -362,7 +362,7 @@
     {
       "name": "Custom Commands",
       "plugins": [
-         {
+        {
           "name": "cypress-plugin-api",
           "description": "Cypress plugin for effective API testing. Imagine Postman, but in Cypress.",
           "link": "https://github.com/filiphric/cypress-plugin-api",

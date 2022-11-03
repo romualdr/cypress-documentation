@@ -1,8 +1,8 @@
 // https://www.npmjs.com/package/replace-in-file
-const replace = require("replace-in-file");
+const replace = require('replace-in-file')
 
 const options = {
-  files: "./docs/**/*.mdx",
+  files: './docs/**/*.mdx',
   // files: "./docs/component-testing/component-framework-configuration.mdx",
   from: [
     /<npm-or-yarn>/g,
@@ -12,17 +12,17 @@ const options = {
     /<\/template>/g,
   ],
   to: [
-    "<Tabs>",
-    "</Tabs>",
+    '<Tabs>',
+    '</Tabs>',
     "<TabItem value='npm'>",
     "<TabItem value='yarn'>",
-    "</TabItem>",
+    '</TabItem>',
   ],
-};
+}
 
 try {
-  const results = replace.sync(options);
-  console.log("Replacement results:", results);
+  const results = replace.sync(options)
+  console.log('Replacement results:', results)
 } catch (error) {
-  console.error("Error occurred:", error);
+  console.error('Error occurred:', error)
 }

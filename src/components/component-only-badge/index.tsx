@@ -1,5 +1,5 @@
-import React from "react";
-import Badge from "@site/src/components/badge";
+import React from 'react'
+import Badge from '@site/src/components/badge'
 
 export default function ComponentOnlyBadge() {
   return (
@@ -9,5 +9,5 @@ export default function ComponentOnlyBadge() {
     >
       Component Only
     </Badge>
-  );
+  )
 }

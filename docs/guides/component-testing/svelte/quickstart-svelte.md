@@ -90,7 +90,6 @@ two buttons.
 Add a Stepper component to your project by creating a new file in the `src/lib`
 directory called `Stepper.svelte`
 
-
 ```html title=Stepper.svelte
 <script>
   export let count = 0;

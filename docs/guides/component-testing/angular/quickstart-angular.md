@@ -50,9 +50,10 @@ When you run Cypress for the first time in the project, the Cypress app will
 prompt you to set up either **E2E Testing** or **Component Testing**. Choose
 **Component Testing** and step through the configuration wizard.
 
-<DocsImage 
+<DocsImage
   src="/img/guides/component-testing/select-test-type.png" 
-  caption="Choose Component Testing"> </DocsImage>
+  caption="Choose Component Testing"
+/>
 
 The Project Setup screen automatically detects your framework, which is Angular.
 Cypress Component Testing uses your existing development server config to render
@@ -61,15 +62,16 @@ as they do in production.
 
 <DocsImage 
   src="/img/guides/component-testing/project-setup-angular.png" 
-  caption=""> </DocsImage>
+  caption=""
+/>
 
 Next, Cypress will detect your framework and generate all the necessary
 configuration files, and ensure all required dependencies are installed.
 
 <DocsImage 
   src="/img/guides/component-testing/scaffolded-files-angular.png" 
-  caption="The Cypress launchpad will scaffold all of these files for you.">
-</DocsImage>
+  caption="The Cypress launchpad will scaffold all of these files for you."
+/>
 
 After setting up component testing, you will be at the Browser Selection screen.
 
@@ -78,7 +80,8 @@ to open the Cypress app.
 
 <DocsImage 
   src="/img/guides/component-testing/select-browser.png" 
-  caption="Choose your browser"> </DocsImage>
+  caption="Choose your browser"
+/>
 
 ## Creating a Component
 
@@ -88,7 +91,7 @@ In this guide, we'll use a `StepperComponent` with zero dependencies and one bit
 of internal state, a "counter" that can be incremented and decremented by two
 buttons.
 
-:::info 
+:::info
 
 If your component uses providers, modules, declarations, requests, or other
 environmental setups, you will need additional work to get your component
@@ -129,7 +132,6 @@ export class StepperComponent {
   }
 }
 ```
-
 
 ## Next Steps
 

@@ -3,7 +3,7 @@ import type { Node } from 'unist'
 import visit from 'unist-util-visit'
 import { createDirective } from '../utils/createDirective'
 import { hydratePluginSample } from './hydratePluginSample'
-import { isCode, isMatchedDirective } from '../utils/matchHelpers';
+import { isCode, isMatchedDirective } from '../utils/matchHelpers'
 
 export function cypressConfigPluginExample(this: any) {
   const tagName = 'cypress-config-plugin-example'

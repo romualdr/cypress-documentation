@@ -21,7 +21,7 @@ module.exports = async function favIcon(context) {
             },
           },
         ],
-      };
+      }
     },
-  };
-};
+  }
+}

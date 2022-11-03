@@ -34,15 +34,15 @@ it(`should replace multi-line token with parsed visit/mount commands`, () => {
   // the two routes above
   cy.mount(<Dashboard />)}-`
   const { visitCode, mountCode } = hydrateVisitMountExample(code)
-  expect(visitCode).toEqual(`// visiting the dashboard should make requests that match
+  expect(visitCode)
+    .toEqual(`// visiting the dashboard should make requests that match
   // the two routes above
   cy.visit('http://localhost:8888/dashboard')`)
-  expect(mountCode).toEqual(`// mounting the dashboard should make requests that match
+  expect(mountCode)
+    .toEqual(`// mounting the dashboard should make requests that match
   // the two routes above
   cy.mount(<Dashboard />)`)
 })
-
-
 
 it('blank code string should throw error', () => {
   const code = ''

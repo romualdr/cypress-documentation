@@ -1,35 +1,28 @@
-import React from "react";
-import s from "./style.module.css";
-import { PluginProps } from "./types";
+import React from 'react'
+import s from './style.module.css'
+import { PluginProps } from './types'
 // @ts-ignore
-import pluginsJSON from "@site/src/data/plugins.json";
+import pluginsJSON from '@site/src/data/plugins.json'
 
 function classNames(...classes) {
-  return classes.filter(Boolean).join(" ");
+  return classes.filter(Boolean).join(' ')
 }
 
 function createMarkup(html) {
-  return { __html: html };
+  return { __html: html }
 }
 
 export default function PluginsList() {
   return (
     <>
       {pluginsJSON.plugins.map((plugin) => (
-        <section
-          key={plugin.name}
-          data-cy={`plugin-${plugin.name}`}
-        >
+        <section key={plugin.name} data-cy={`plugin-${plugin.name}`}>
           <h2 id={plugin.name}>
-            <a href={`#${plugin.name}`}>
-              {plugin.name}
-            </a>
+            <a href={`#${plugin.name}`}>{plugin.name}</a>
           </h2>
 
           {plugin.description && (
-            <p
-              dangerouslySetInnerHTML={createMarkup(plugin.description)}
-            ></p>
+            <p dangerouslySetInnerHTML={createMarkup(plugin.description)}></p>
           )}
 
           <ul className={s.pluginsList}>
@@ -67,7 +60,7 @@ export default function PluginsList() {
                 <div>
                   {plugin.keywords?.map((keyword, index) => (
                     <span key={index} className={`${s.keyword}`}>
-                      {" "}
+                      {' '}
                       #{keyword}
                     </span>
                   ))}
@@ -78,5 +71,5 @@ export default function PluginsList() {
         </section>
       ))}
     </>
-  );
+  )
 }

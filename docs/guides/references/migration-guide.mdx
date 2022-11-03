@@ -736,14 +736,21 @@ Below are several examples of migrating various commands from
 
 #### Read and attach a fixture
 
-<Badge type="danger">Before</Badge> Attaching a fixture from disk with <code>cypress-file-upload</code>
+<Badge type="danger">Before</Badge> Attaching a fixture from disk with <code>
+  cypress-file-upload
+</code>
 
 ```js
 cy.get('[data-cy="file-input"]').attachFile('myfixture.json')
 ```
 
-<Badge type="success">After</Badge> Selecting a fixture from disk with <code>.selectFile()</code>.
-Cypress follows paths from your project root (same as <a href="/api/commands/readfile"><code>cy.readFile()</code></a>).
+<Badge type="success">After</Badge> Selecting a fixture from disk with <code>
+  .selectFile()
+</code>
+. Cypress follows paths from your project root (same as <a href="/api/commands/readfile">
+  <code>cy.readFile()</code>
+</a>
+).
 
 ```js
 cy.get('[data-cy="file-input"]').selectFile('cypress/fixtures/myfixture.json')
@@ -756,7 +763,9 @@ cy.get('[data-cy="file-input"]').selectFile('@myfixture')
 
 #### Using drag-n-drop
 
-<Badge type="danger">Before</Badge> Dragging and dropping a file with <code>cypress-file-upload</code>
+<Badge type="danger">Before</Badge> Dragging and dropping a file with <code>
+  cypress-file-upload
+</code>
 
 ```js
 cy.get('[data-cy="dropzone"]').attachFile('myfixture.json', {
@@ -764,8 +773,13 @@ cy.get('[data-cy="dropzone"]').attachFile('myfixture.json', {
 })
 ```
 
-<Badge type="success">After</Badge> Selecting a fixture from disk with <code>.selectFile()</code>.
-Cypress follows paths from the root of your test folder (same as <a href="/api/commands/readfile"><code>cy.readFile()</code></a>).
+<Badge type="success">After</Badge> Selecting a fixture from disk with <code>
+  .selectFile()
+</code>
+. Cypress follows paths from the root of your test folder (same as <a href="/api/commands/readfile">
+  <code>cy.readFile()</code>
+</a>
+).
 
 ```js
 cy.get('[data-cy="dropzone"]').selectFile('fixtures/myfixture.json', {
@@ -775,7 +789,9 @@ cy.get('[data-cy="dropzone"]').selectFile('fixtures/myfixture.json', {
 
 #### Overriding the file name
 
-<Badge type="danger">Before</Badge> Dragging and dropping a file with <code>cypress-file-upload</code>
+<Badge type="danger">Before</Badge> Dragging and dropping a file with <code>
+  cypress-file-upload
+</code>
 
 ```js
 cy.get('[data-cy="dropzone"]').attachFile({
@@ -784,8 +800,13 @@ cy.get('[data-cy="dropzone"]').attachFile({
 })
 ```
 
-<Badge type="success">After</Badge> Selecting a fixture from disk with <code>.selectFile()</code>.
-Cypress follows paths from the root of your test folder (same as <a href="/api/commands/readfile"><code>cy.readFile()</code></a>).
+<Badge type="success">After</Badge> Selecting a fixture from disk with <code>
+  .selectFile()
+</code>
+. Cypress follows paths from the root of your test folder (same as <a href="/api/commands/readfile">
+  <code>cy.readFile()</code>
+</a>
+).
 
 ```js
 cy.get('[data-cy="dropzone"]').selectFile({
@@ -796,7 +817,9 @@ cy.get('[data-cy="dropzone"]').selectFile({
 
 #### Working with file contents
 
-<Badge type="danger">Before</Badge> Working with file contents before using using <code>cypress-file-upload</code>
+<Badge type="danger">Before</Badge> Working with file contents before using using <code>
+  cypress-file-upload
+</code>
 
 ```js
 const special = 'file.spss'
@@ -815,8 +838,9 @@ cy.fixture(special, 'binary')
 ```
 
 <Badge type="success">After</Badge> Working with file contents before using with
-<code>.selectFile()</code>. The <code>null</code> encoding introduced in Cypress 9.0 makes working with
-binary data simpler, and is the preferred encoding for use with <code>.selectFile()</code>.
+<code>.selectFile()</code>. The <code>null</code> encoding introduced in Cypress
+9.0 makes working with binary data simpler, and is the preferred encoding for
+use with <code>.selectFile()</code>.
 
 ```js
 const special = 'file.spss'
@@ -843,7 +867,9 @@ cy.get('[data-cy="file-input"]').selectFile('@special')
 
 #### Specifying a custom mimeType
 
-<Badge type="danger">Before</Badge> Specifying the MIME type with <code>cypress-file-upload</code>
+<Badge type="danger">Before</Badge> Specifying the MIME type with <code>
+  cypress-file-upload
+</code>
 
 ```js
 cy.get('[data-cy="dropzone"]').attachFile({
@@ -852,7 +878,10 @@ cy.get('[data-cy="dropzone"]').attachFile({
 })
 ```
 
-<Badge type="success">After</Badge> Specifying a MIME type with <code>.selectFile()</code>.
+<Badge type="success">After</Badge> Specifying a MIME type with <code>
+  .selectFile()
+</code>
+.
 
 ```js
 cy.get('[data-cy="dropzone"]').selectFile({
@@ -1411,7 +1440,9 @@ it('renders a Button', () => {
 })
 ```
 
-<Badge type="success">After</Badge> Stylesheets are supported via an import and <code>mountingOptions.stylesheets</code> is not recommended
+<Badge type="success">After</Badge> Stylesheets are supported via an import and <code>
+  mountingOptions.stylesheets
+</code> is not recommended
 
 ```js
 // In the majority of modern style-loaders,
@@ -1752,7 +1783,7 @@ cy.get('#dropdon').should('not.contain', 'Cypress')
 <DocsImage
   src="/img/guides/migration-guide/el-incorrectly-passes-existence-check.png"
   alt="non-existent element before 6.0"
- />
+/>
 
 In 6.0, these assertions will now correctly fail, telling us that the `#dropdon`
 element doesn't exist in the DOM.
@@ -1760,7 +1791,7 @@ element doesn't exist in the DOM.
 <DocsImage
   src="/img/guides/migration-guide/el-correctly-fails-existence-check.png"
   alt="non-existent element in 6.0"
- />
+/>
 
 #### Assertions on non-existent elements
 
@@ -1807,8 +1838,9 @@ browser's implementation on how they regard elements with `opacity: 0`.
 
 #### Assert visibility of `opacity: 0` element
 
-<Badge type="danger">Before</Badge> Failed assertion that <code>opacity: 0</code> element is
-not visible.
+<Badge type="danger">Before</Badge> Failed assertion that <code>
+  opacity: 0
+</code> element is not visible.
 
 ```js
 it('test', () => {
@@ -1818,7 +1850,9 @@ it('test', () => {
 })
 ```
 
-<Badge type="success">After</Badge> Passed assertion that <code>opacity: 0</code> element is not visible.
+<Badge type="success">After</Badge> Passed assertion that <code>
+  opacity: 0
+</code> element is not visible.
 
 ```js
 it('test', () => {
@@ -1930,7 +1964,9 @@ plugin to Cypress's built-in test retries.
 
 #### Configure test retries via the CLI
 
-<Badge type="danger">Before</Badge> Setting retries with <code>cypress-plugin-retries</code> via env vars
+<Badge type="danger">Before</Badge> Setting retries with <code>
+  cypress-plugin-retries
+</code> via env vars
 
 ```shell
 CYPRESS_RETRIES=2 cypress run
@@ -1944,7 +1980,9 @@ CYPRESS_RETRIES=2 cypress run
 
 #### Configure test retries in the configuration file
 
-<Badge type="danger">Before</Badge> Setting retries with <code>cypress-plugin-retries</code> via configuration
+<Badge type="danger">Before</Badge> Setting retries with <code>
+  cypress-plugin-retries
+</code> via configuration
 
 ```json
 {
@@ -1978,7 +2016,9 @@ CYPRESS_RETRIES=2 cypress run
 
 #### Configure test retries per test
 
-<Badge type="danger">Before</Badge> Setting retries with <code>cypress-plugin-retries</code> via the test
+<Badge type="danger">Before</Badge> Setting retries with <code>
+  cypress-plugin-retries
+</code> via the test
 
 ```js
 it('test', () => {
@@ -2188,7 +2228,8 @@ The return type of the [Cypress.Blob](/api/utilities/blob) methods
 `arrayBufferToBlob`, `base64StringToBlob`, `binaryStringToBlob`, and
 `dataURLToBlob` have changed from `Promise<Blob>` to `Blob`.
 
-<Badge type="danger">Before</Badge> <code>Cypress.Blob</code> methods returned a Promise
+<Badge type="danger">Before</Badge> <code>Cypress.Blob</code> methods returned a
+Promise
 
 ```js
 Cypress.Blob.base64StringToBlob(this.logo, 'image/png').then((blob) => {
@@ -2239,7 +2280,9 @@ property if specified.
 If you were using the `experimentalGetCookiesSameSite` configuration to get the
 `sameSite` property previously, this should be removed.
 
-<Badge type="danger">Before</Badge> Cookies yielded before had no <code>sameSite</code> property.
+<Badge type="danger">Before</Badge> Cookies yielded before had no <code>
+  sameSite
+</code> property.
 
 ```js
 cy.getCookie('token').then((cookie) => {
@@ -2256,7 +2299,9 @@ cy.getCookie('token').then((cookie) => {
 })
 ```
 
-<Badge type="success">After</Badge> Cookies yielded now have <code>sameSite</code> property if specified.
+<Badge type="success">After</Badge> Cookies yielded now have <code>
+  sameSite
+</code> property if specified.
 
 ```js
 cy.getCookie('token').then((cookie) => {
@@ -2278,7 +2323,9 @@ cy.getCookie('token').then((cookie) => {
 
 The globals `__dirname` and `__filename` no longer include a leading slash.
 
-<Badge type="danger">Before</Badge> <code>__dirname</code> / <code>__filename</code>
+<Badge type="danger">Before</Badge> <code>__dirname</code> / <code>
+  __filename
+</code>
 
 ```js
 // cypress/integration/app_spec.js
@@ -2288,7 +2335,9 @@ it('include leading slash < 5.0', () => {
 })
 ```
 
-<Badge type="success">After</Badge> <code>__dirname</code> / <code>__filename</code>
+<Badge type="success">After</Badge> <code>__dirname</code> / <code>
+  __filename
+</code>
 
 ```js
 // cypress/integration/app_spec.js
@@ -2525,7 +2574,8 @@ cy.wrap([
 })
 ```
 
-<Badge type="success">After</Badge> Need to specificy <code>deep.include</code> for deep equality
+<Badge type="success">After</Badge> Need to specificy <code>deep.include</code> for
+deep equality
 
 ```javascript
 // Specifically check for deep.include to pass in Cypress 4
@@ -2570,7 +2620,10 @@ spy.reset()
 stub.reset()
 ```
 
-<Badge type="success">After</Badge> Update spies and stubs should now use  <code>resetHistory()</code>.
+<Badge type="success">After</Badge> Update spies and stubs should now use <code>
+  resetHistory()
+</code>
+.
 
 ```javascript
 const spy = cy.spy()
@@ -2602,7 +2655,9 @@ on('before:browser:launch', (browser, args) => {
 })
 ```
 
-<Badge type="success">After</Badge> Access the <code>args</code> property off <code>launchOptions</code>
+<Badge type="success">After</Badge> Access the <code>args</code> property off <code>
+  launchOptions
+</code>
 
 ```js
 on('before:browser:launch', (browser, launchOptions) => {
@@ -2620,7 +2675,9 @@ in `before:browser:launch` by modifying the `launchOptions` object.
 
 Now, you must pass those options as `launchOptions.preferences`:
 
-<Badge type="danger">Before</Badge> Passing BrowserWindow options on the <code>launchOptions</code> object is no longer supported.
+<Badge type="danger">Before</Badge> Passing BrowserWindow options on the <code>
+  launchOptions
+</code> object is no longer supported.
 
 ```js
 on('before:browser:launch', (browser, args) => {
@@ -2630,7 +2687,9 @@ on('before:browser:launch', (browser, args) => {
 })
 ```
 
-<Badge type="success">After</Badge> Pass BrowserWindow options on the <code>options.preferences</code> object instead.
+<Badge type="success">After</Badge> Pass BrowserWindow options on the <code>
+  options.preferences
+</code> object instead.
 
 ```js
 on('before:browser:launch', (browser, launchOptions) => {
@@ -2650,13 +2709,15 @@ See the
 [docs for `cypress run --browser`](/guides/guides/command-line#cypress-run-browser-lt-browser-name-or-path-gt)
 for more information.
 
-<Badge type="danger">Before</Badge> Passing <code>canary</code> will no longer find a browser
+<Badge type="danger">Before</Badge> Passing <code>canary</code> will no longer find
+a browser
 
 ```shell
 cypress run --browser canary
 ```
 
-<Badge type="success">After</Badge> Pass <code>chrome:canary</code> to launch Chrome Canary
+<Badge type="success">After</Badge> Pass <code>chrome:canary</code> to launch Chrome
+Canary
 
 ```shell
 cypress run --browser chrome:canary
@@ -2730,8 +2791,9 @@ module.exports = (on, config) => {
 }
 ```
 
-<Badge type="success">After</Badge> Use <code>browser.name</code> and <code>browser.family</code> to select
-non-Electron Chromium-based browsers
+<Badge type="success">After</Badge> Use <code>browser.name</code> and <code>
+  browser.family
+</code> to select non-Electron Chromium-based browsers
 
 ```js
 module.exports = (on, config) => {

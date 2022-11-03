@@ -133,7 +133,10 @@ cy.window().then((win) => {
 })
 ```
 
-<DocsImage src="/img/api/location/window-location-object-printed-in-console-log.png" alt="Console.log of window.location" />
+<DocsImage
+  src="/img/api/location/window-location-object-printed-in-console-log.png"
+  alt="Console.log of window.location"
+/>
 
 #### Console output of `.location()`
 
@@ -143,7 +146,10 @@ cy.location().then((loc) => {
 })
 ```
 
-<DocsImage src="/img/api/location/special-cypress-location-object-logged-in-console-output.png" alt="Console Log of Cypress location command" />
+<DocsImage
+  src="/img/api/location/special-cypress-location-object-logged-in-console-output.png"
+  alt="Console Log of Cypress location command"
+/>
 
 ## Rules
 
@@ -154,13 +160,12 @@ cy.location().then((loc) => {
 ### Assertions [<Icon name="question-circle"/>](/guides/core-concepts/introduction-to-cypress#Assertions)
 
 - `cy.location()` will automatically
-[retry](/guides/core-concepts/retry-ability) until all chained assertions have
-passed
+  [retry](/guides/core-concepts/retry-ability) until all chained assertions have
+  passed
 
 ### Timeouts [<Icon name="question-circle"/>](/guides/core-concepts/introduction-to-cypress#Timeouts)
 
-- `cy.location()` can time out waiting for assertions you've added to
-pass.
+- `cy.location()` can time out waiting for assertions you've added to pass.
 
 ## Command Log
 
@@ -174,12 +179,18 @@ cy.location().should((loc) => {
 
 The commands above will display in the Command Log as:
 
-<DocsImage src="/img/api/location/make-assertion-about-location-url-in-tests.png" alt="Command Log of Cypress location command" />
+<DocsImage
+  src="/img/api/location/make-assertion-about-location-url-in-tests.png"
+  alt="Command Log of Cypress location command"
+/>
 
 When clicking on `location` within the command log, the console outputs the
 following:
 
-<DocsImage src="/img/api/location/location-object-in-console-log.png" alt="Console Log of Cypress location command" />
+<DocsImage
+  src="/img/api/location/location-object-in-console-log.png"
+  alt="Console Log of Cypress location command"
+/>
 
 ## See also
 

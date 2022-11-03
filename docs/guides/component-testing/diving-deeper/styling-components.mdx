@@ -25,7 +25,10 @@ will need to follow this guide in order to get your component looking **and
 behaving** like it will in production.
 
 :::tip
-Ensure that whatever you're doing in production is happening within either the Component HTML file or the Component Support File.
+
+Ensure that whatever you're doing in production is happening within
+either the Component HTML file or the Component Support File.
+
 :::
 
 ## Component Support File
@@ -178,36 +181,36 @@ example project structure would look like so:
 The contents of **setup.js** may look like so:
 
 ```js
-import "~normalize/normalize.css";
-import "font-awesome";
-import "./main.css";
+import '~normalize/normalize.css'
+import 'font-awesome'
+import './main.css'
 
 export const createStore = () => {
-  return; /* store */
-};
+  return /* store */
+}
 
 export const createRouter = () => {
-  return; /* router */
-};
+  return /* router */
+}
 
 export const createApp = () => {
-  return <App router={createRouter()} store={createStore()}></App>;
-};
+  return <App router={createRouter()} store={createStore()}></App>
+}
 ```
 
 and its usage in `main.js` could look like so:
 
 ```js
-import { createApp } from "./setup.js";
+import { createApp } from './setup.js'
 
-ReactDOM.render(createApp());
+ReactDOM.render(createApp())
 ```
 
 and Cypress would re-use it in its support file
 
 ```js
 /* And that's it! */
-import "../../src/setup.js";
+import '../../src/setup.js'
 ```
 
 The rest of this section is dedicated to discussing specific style problems you
@@ -261,7 +264,7 @@ Re-using stylesheets that are imported in the beginning of your application was
 covered in the last section.
 
 ```js
-import "./main.css";
+import './main.css'
 ```
 
 4. Within a configuration file like `next.config.js` or `nuxt.config.js`.
@@ -296,7 +299,7 @@ Or via an `@import` statement
 ```html
 <head>
   <style>
-    @import url("https://fonts.googleapis.com/css2?family=Readex+Pro:wght@200;300;400;500;600;700&family=Roboto&display=swap");
+    @import url('https://fonts.googleapis.com/css2?family=Readex+Pro:wght@200;300;400;500;600;700&family=Roboto&display=swap');
   </style>
 </head>
 ```
@@ -306,12 +309,12 @@ Or via an `@import` statement
 ```css
 /* main.css */
 @font-face {
-  font-family: "Fira Sans";
-  src: url("fonts/fira/eot/FiraSans-Regular.eot");
-  src: url("fonts/fira/eot/FiraSans-Regular.eot") format("embedded-opentype"), url("fonts/fira/woff2/FiraSans-Regular.woff2")
-      format("woff2"),
-    url("fonts/fira/woff/FiraSans-Regular.woff") format("woff"), url("fonts/fira/woff2/FiraSans-Regular.ttf")
-      format("truetype");
+  font-family: 'Fira Sans';
+  src: url('fonts/fira/eot/FiraSans-Regular.eot');
+  src: url('fonts/fira/eot/FiraSans-Regular.eot') format('embedded-opentype'), url('fonts/fira/woff2/FiraSans-Regular.woff2')
+      format('woff2'),
+    url('fonts/fira/woff/FiraSans-Regular.woff') format('woff'), url('fonts/fira/woff2/FiraSans-Regular.ttf')
+      format('truetype');
   font-weight: normal;
   font-style: normal;
 }

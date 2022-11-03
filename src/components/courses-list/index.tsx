@@ -1,9 +1,9 @@
-import React from "react";
-import s from "./style.module.css";
-import { PluginProps } from "./types";
-import Badge from "@site/src/components/badge";
+import React from 'react'
+import s from './style.module.css'
+import { PluginProps } from './types'
+import Badge from '@site/src/components/badge'
 // @ts-ignore
-import coursesJSON from "@site/src/data/courses.json";
+import coursesJSON from '@site/src/data/courses.json'
 
 export default function CoursesList() {
   return (
@@ -23,8 +23,8 @@ export default function CoursesList() {
                 </a>
 
                 <p className={s.content}>
-                  Published on{" "}
-                  <a href={`${course.sourceUrl}`}>{course.sourceName}</a> by{" "}
+                  Published on{' '}
+                  <a href={`${course.sourceUrl}`}>{course.sourceName}</a> by{' '}
                   {course.authorTwitter && (
                     <a
                       href={`https://twitter.com/${course.authorTwitter}`}
@@ -34,8 +34,8 @@ export default function CoursesList() {
                       {course.author}
                     </a>
                   )}
-                  {course.authorTwitter ? "" : course.author}{" "}
-                  {course.language && <em>, Language: {course.language}</em>}{" "}
+                  {course.authorTwitter ? '' : course.author}{' '}
+                  {course.language && <em>, Language: {course.language}</em>}{' '}
                   {course.free && <Badge type="info">Free</Badge>}
                 </p>
               </li>
@@ -44,5 +44,5 @@ export default function CoursesList() {
         </article>
       </div>
     </>
-  );
+  )
 }

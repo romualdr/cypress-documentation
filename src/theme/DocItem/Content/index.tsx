@@ -1,12 +1,12 @@
-import React from 'react';
-import clsx from 'clsx';
-import {ThemeClassNames} from '@docusaurus/theme-common';
-import {useDoc} from '@docusaurus/theme-common/internal';
-import Heading from '@theme/Heading';
-import MDXContent from '@theme/MDXContent';
-import E2EOnlyBadge from "@site/src/components/e2e-only-badge"
-import ComponentOnlyBadge from "@site/src/components/component-only-badge"
-import s from "./style.module.css";
+import React from 'react'
+import clsx from 'clsx'
+import { ThemeClassNames } from '@docusaurus/theme-common'
+import { useDoc } from '@docusaurus/theme-common/internal'
+import Heading from '@theme/Heading'
+import MDXContent from '@theme/MDXContent'
+import E2EOnlyBadge from '@site/src/components/e2e-only-badge'
+import ComponentOnlyBadge from '@site/src/components/component-only-badge'
+import s from './style.module.css'
 
 /**
  Title can be declared inside md content or declared through
@@ -20,22 +20,25 @@ import s from "./style.module.css";
 */
 
 function useSyntheticTitle() {
-  const {metadata, frontMatter, contentTitle} = useDoc();
+  const { metadata, frontMatter, contentTitle } = useDoc()
   const shouldRender =
-    !frontMatter.hide_title && typeof contentTitle === 'undefined';
+    !frontMatter.hide_title && typeof contentTitle === 'undefined'
   if (!shouldRender) {
-    return null;
+    return null
   }
-  return metadata.title;
+  return metadata.title
 }
-export default function DocItemContent({children}) {
+export default function DocItemContent({ children }) {
+  const {
+    frontMatter: { e2eSpecific, componentSpecific },
+  } = useDoc()
+  const testTypePill =
+    (e2eSpecific && <E2EOnlyBadge />) ||
+    (componentSpecific && <ComponentOnlyBadge />)
 
-const { frontMatter: {e2eSpecific, componentSpecific} } = useDoc();
-const testTypePill = e2eSpecific && <E2EOnlyBadge /> || componentSpecific && <ComponentOnlyBadge />
-
-const syntheticTitle = useSyntheticTitle();
-return (
-  <div className={clsx(ThemeClassNames.docs.docMarkdown, 'markdown')}>
+  const syntheticTitle = useSyntheticTitle()
+  return (
+    <div className={clsx(ThemeClassNames.docs.docMarkdown, 'markdown')}>
       {syntheticTitle && (
         <header>
           <div className={s.mainContentHeader}>
@@ -48,5 +51,5 @@ return (
       )}
       <MDXContent>{children}</MDXContent>
     </div>
-  );
+  )
 }

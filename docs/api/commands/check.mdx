@@ -62,8 +62,7 @@ Pass in an options object to change the default behavior of `.check()`.
 
 ### Yields [<Icon name="question-circle"/>](/guides/core-concepts/introduction-to-cypress#Subject-Management)
 
-- `.check()` yields the same subject it was given from the previous
-command.
+- `.check()` yields the same subject it was given from the previous command.
 
 ## Examples
 
@@ -165,22 +164,21 @@ cy.get('#pick-fruit :checked').should('be.checked').and('have.value', 'apple')
 
 ### Requirements [<Icon name="question-circle"/>](/guides/core-concepts/introduction-to-cypress#Chains-of-Commands)
 
-- `.check()` requires being chained off a command that yields DOM
-element(s).</li><li>`.check()` requires the element to have type `checkbox` or
-`radio`.
+- `.check()` requires being chained off a command that yields DOM element(s).
+- `.check()` requires the element to have type `checkbox` or `radio`.
 
 ### Assertions [<Icon name="question-circle"/>](/guides/core-concepts/introduction-to-cypress#Assertions)
 
 - `.check()` will automatically wait for the element to reach an
-[actionable state](/guides/core-concepts/interacting-with-elements)</li><li>`.check()`
-will automatically [retry](/guides/core-concepts/retry-ability) until all
-chained assertions have passed
+  [actionable state](/guides/core-concepts/interacting-with-elements)
+- `.check()` will automatically [retry](/guides/core-concepts/retry-ability)
+  until all chained assertions have passed
 
 ### Timeouts [<Icon name="question-circle"/>](/guides/core-concepts/introduction-to-cypress#Timeouts)
 
 - `.check()` can time out waiting for the element to reach an
-[actionable state](/guides/core-concepts/interacting-with-elements).</li><li>`.check()`
-can time out waiting for assertions you've added to pass.
+  [actionable state](/guides/core-concepts/interacting-with-elements).
+- `.check()` can time out waiting for assertions you've added to pass.
 
 ## Command Log
 
@@ -192,12 +190,18 @@ cy.get('form').find('[name="emailUser"]').check()
 
 The commands above will display in the Command Log as:
 
-<DocsImage src="/img/api/check/check-checkbox-in-cypress.png" alt="Command log for check" />
+<DocsImage
+  src="/img/api/check/check-checkbox-in-cypress.png"
+  alt="Command log for check"
+/>
 
 When clicking on `check` within the command log, the console outputs the
 following:
 
-<DocsImage src="/img/api/check/console-showing-events-on-check.png" alt="console.log for check" />
+<DocsImage
+  src="/img/api/check/console-showing-events-on-check.png"
+  alt="console.log for check"
+/>
 
 ## See also
 

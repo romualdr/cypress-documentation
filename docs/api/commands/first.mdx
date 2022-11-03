@@ -72,22 +72,21 @@ cy.get('li').first()
 
 ### Requirements [<Icon name="question-circle"/>](/guides/core-concepts/introduction-to-cypress#Chains-of-Commands)
 
-- `.first()` requires being chained off a command that yields DOM
-element(s).
+- `.first()` requires being chained off a command that yields DOM element(s).
 
 ### Assertions [<Icon name="question-circle"/>](/guides/core-concepts/introduction-to-cypress#Assertions)
 
-- `.first()` will automatically
-[retry](/guides/core-concepts/retry-ability) until the element(s)
-[exist in the DOM](/guides/core-concepts/introduction-to-cypress#Default-Assertions)</li><li>`.first()`
-will automatically [retry](/guides/core-concepts/retry-ability) until all
-chained assertions have passed
+- `.first()` will automatically [retry](/guides/core-concepts/retry-ability)
+  until the element(s)
+  [exist in the DOM](/guides/core-concepts/introduction-to-cypress#Default-Assertions) -
+  `.first()` will automatically [retry](/guides/core-concepts/retry-ability)
+  until all chained assertions have passed
 
 ### Timeouts [<Icon name="question-circle"/>](/guides/core-concepts/introduction-to-cypress#Timeouts)
 
 - `.first()` can time out waiting for the element(s) to
-[exist in the DOM](/guides/core-concepts/introduction-to-cypress#Default-Assertions).</li><li>`.first()`
-can time out waiting for assertions you've added to pass.
+  [exist in the DOM](/guides/core-concepts/introduction-to-cypress#Default-Assertions). -
+  `.first()` can time out waiting for assertions you've added to pass.
 
 ## Command Log
 
@@ -99,12 +98,18 @@ cy.get('form').find('input').first()
 
 The commands above will display in the Command Log as:
 
-<DocsImage src="/img/api/first/get-the-first-in-list-of-elements.png" alt="Command Log first" />
+<DocsImage
+  src="/img/api/first/get-the-first-in-list-of-elements.png"
+  alt="Command Log first"
+/>
 
 When clicking on `first` within the command log, the console outputs the
 following:
 
-<DocsImage src="/img/api/first/console-log-the-first-element.png" alt="console.log first" />
+<DocsImage
+  src="/img/api/first/console-log-the-first-element.png"
+  alt="console.log first"
+/>
 
 ## See also
 

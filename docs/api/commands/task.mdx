@@ -505,13 +505,13 @@ on('task', {
 
 ### Requirements [<Icon name="question-circle"/>](/guides/core-concepts/introduction-to-cypress#Chains-of-Commands)
 
-- `cy.task()` requires being chained off of `cy`.</li><li>`cy.task()`
-requires the task to eventually end.
+- `cy.task()` requires being chained off of `cy`. - `cy.task()` requires the
+  task to eventually end.
 
 ### Assertions [<Icon name="question-circle"/>](/guides/core-concepts/introduction-to-cypress#Assertions)
 
-- `cy.task()` will only run assertions you have chained once, and will
-not [retry](/guides/core-concepts/retry-ability).
+- `cy.task()` will only run assertions you have chained once, and will not
+  [retry](/guides/core-concepts/retry-ability).
 
 ### Timeouts [<Icon name="question-circle"/>](/guides/core-concepts/introduction-to-cypress#Timeouts)
 
@@ -538,7 +538,10 @@ configure the countFiles task in the Cypress configuration and call it in a spec
 When clicking on the `task` command within the command log, the console outputs
 the following:
 
-<DocsImage src="/img/api/task/console-shows-task-result.png" alt="Console Log task" />
+<DocsImage
+  src="/img/api/task/console-shows-task-result.png"
+  alt="Console Log task"
+/>
 
 ## History
 

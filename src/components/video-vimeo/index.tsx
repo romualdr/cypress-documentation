@@ -1,13 +1,13 @@
-import React from "react";
-import s from "./style.module.css";
-import { VideoVimeoProps } from "./types";
+import React from 'react'
+import s from './style.module.css'
+import { VideoVimeoProps } from './types'
 
 export default function VideoYouTube({ src, title }: VideoVimeoProps) {
   const videoId = () => {
-    const idStartIndex = src.lastIndexOf("/") + 1;
+    const idStartIndex = src.lastIndexOf('/') + 1
 
-    return src.slice(idStartIndex);
-  };
+    return src.slice(idStartIndex)
+  }
 
   return (
     <div className={s.embedContainer}>
@@ -17,5 +17,5 @@ export default function VideoYouTube({ src, title }: VideoVimeoProps) {
         allowFullScreen
       ></iframe>
     </div>
-  );
+  )
 }

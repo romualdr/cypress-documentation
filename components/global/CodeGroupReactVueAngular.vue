@@ -9,8 +9,8 @@
       <slot name="vue"></slot>
     </CodeBlock>
     <CodeBlock label="Angular" active>
-        <template #alert><slot name="angular-alert"></slot></template>
-        <slot name="angular"></slot>
+      <template #alert><slot name="angular-alert"></slot></template>
+      <slot name="angular"></slot>
     </CodeBlock>
   </CodeGroup>
 </template>

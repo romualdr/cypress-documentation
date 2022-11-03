@@ -147,6 +147,7 @@ it('when the decrement button is pressed, the counter is decremented', () => {
   cy.get(counterSelector).should('have.text', '-1')
 })
 ```
+
 </VueSyntaxTabs>
 
 2. Next, run through the behavior of the Stepper as a user would. There is
@@ -178,6 +179,7 @@ it('when clicking increment and decrement buttons, the counter is changed as exp
   cy.get(counterSelector).should('have.text', '99')
 })
 ```
+
 </VueSyntaxTabs>
 
 ## Learn More

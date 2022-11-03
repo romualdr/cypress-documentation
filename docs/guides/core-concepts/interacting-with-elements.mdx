@@ -213,7 +213,7 @@ coordinates are fired at the center of the element, but most commands enable you
 to change the position it's fired to.
 
 ```js
-cy.get("button").click({ position: "topLeft" });
+cy.get('button').click({ position: 'topLeft' })
 ```
 
 The coordinates we fired the event at will generally be available when clicking
@@ -222,15 +222,12 @@ the command in the [Command Log](/guides/core-concepts/cypress-app#Command-Log).
 <DocsImage
   src="/img/guides/core-concepts/v10/coords.png"
   alt="Event coordinates"
- />
+/>
 
 Additionally we'll display a red "hitbox" - which is a dot indicating the
 coordinates of the event.
 
-<DocsImage
-  src="/img/guides/core-concepts/v10/hitbox.png"
-  alt="Hitbox"
- />
+<DocsImage src="/img/guides/core-concepts/v10/hitbox.png" alt="Hitbox" />
 
 ## Debugging
 
@@ -273,7 +270,7 @@ you a much lower level view into how Cypress works.
 
 ```js
 // break on a debugger before the action command
-cy.get("button").debug().click();
+cy.get('button').debug().click()
 ```
 
 ## Forcing
@@ -298,7 +295,7 @@ You can pass `{ force: true }` to most action commands.
 ```js
 // force the click and all subsequent events
 // to fire even if this element isn't considered 'actionable'
-cy.get("button").click({ force: true });
+cy.get('button').click({ force: true })
 ```
 
 :::info

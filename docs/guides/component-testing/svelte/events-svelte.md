@@ -104,6 +104,7 @@ it('clicking + fires a change event with the incremented value', () => {
   })
 })
 ```
+
 > We're [aliasing](/guides/core-concepts/variables-and-aliases) the spy with
 > `cy.as('onChangeSpy')` so that the Cypress Reporter prints out the name of the
 > spy any time it is invoked. This lets you visually inspect the arguments of

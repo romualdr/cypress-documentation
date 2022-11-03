@@ -2,7 +2,7 @@
 // https://github.com/sapphiredev/documentation-plugins/tree/main/packages/ts2esm2cjs
 // and modified for our needs.
 
-import type { Code, Content } from 'mdast';
+import type { Code, Content } from 'mdast'
 import type { Node, Parent } from 'unist'
 import visit from 'unist-util-visit'
 import { PluginOptions } from './pluginOptions'

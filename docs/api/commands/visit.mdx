@@ -413,15 +413,16 @@ does so immediately before any of your application code runs.
 
 :::caution
 
-<strong class="alert-header"><Icon name="exclamation-triangle"></Icon>
-Experimental</strong>
+<strong class="alert-header">
+  <Icon name="exclamation-triangle"></Icon>
+  Experimental
+</strong>
 
 Visiting cross-origin sites will currently throw an error. It can be enabled by
-setting
-the [`experimentalSessionAndOrigin`](/guides/references/experiments) flag
-to `true` in the Cypress config. This will allow you to visit the cross-origin
-site without errors. However, to interact with the content on the cross-origin
-site, you must use a [`cy.origin()`](/api/commands/origin) block.
+setting the [`experimentalSessionAndOrigin`](/guides/references/experiments)
+flag to `true` in the Cypress config. This will allow you to visit the
+cross-origin site without errors. However, to interact with the content on the
+cross-origin site, you must use a [`cy.origin()`](/api/commands/origin) block.
 
 When visiting a cross-origin site, the `onBeforeLoad` and `onLoad` options are
 not supported.
@@ -443,7 +444,7 @@ The commands above will display in the Command Log as:
 <DocsImage
   src="/img/api/visit/visit-example-page-in-before-each-of-test.png"
   alt="Command Log visit"
- />
+/>
 
 When clicking on `visit` within the command log, the console outputs the
 following:
@@ -451,7 +452,7 @@ following:
 <DocsImage
   src="/img/api/visit/visit-shows-any-redirect-or-cookies-set-in-the-console.png"
   alt="console Log visit"
- />
+/>
 
 ## History
 

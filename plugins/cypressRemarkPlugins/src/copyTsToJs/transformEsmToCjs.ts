@@ -32,4 +32,3 @@ function convertExports(code: string) {
   result = result.replace(exportRegex, 'module.exports.')
   return result
 }
-
